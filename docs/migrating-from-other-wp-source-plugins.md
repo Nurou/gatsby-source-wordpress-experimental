@@ -28,7 +28,7 @@ For example, if you're querying for a list of pages:
 
 ```js
 {
-	wp {
+  wp {
     pages {
       nodes {
         title
@@ -44,15 +44,16 @@ So your query would change to look like this:
 
 ```
 {
-	allWpPage {
-		nodes {
-			title
-		}
-	}
+  allWpPage {
+    nodes {
+      title
+    }
+  }
 }
 ```
 
-
+You fill further need to modify the way you do your filtering, since the filters being used are Gatsby Filters instead of WPGraphQL filters.
+Use Gatsby's [Graphiql](https://www.gatsbyjs.org/docs/running-queries-with-graphiql/) at `http://localhost:8000/___graphiql` with `gatsby develop` running to determine how your filters should be modified. This [reference](https://www.gatsbyjs.org/docs/graphql-reference/) should help.
 
 ### `gatsby-source-graphql` and inline fragments
 
